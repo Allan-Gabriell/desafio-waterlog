@@ -1,0 +1,14 @@
+services:
+  weather-consumer:
+    build: .
+    container_name: weather-consumer
+    environment:
+      SPRING_RABBITMQ_HOST: rabbitmq
+      SPRING_RABBITMQ_PORT: 5672
+      SPRING_RABBITMQ_USERNAME: guest
+      SPRING_RABBITMQ_PASSWORD: guest
+
+networks:
+  default:
+    external:
+      name: watter-collector_default
